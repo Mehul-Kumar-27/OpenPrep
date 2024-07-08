@@ -1,0 +1,188 @@
+{
+  "file": "main.go:18",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T01:38:31.323+05:30"
+}
+{
+  "file": "main.go:46",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T01:38:31.323+05:30"
+}
+[36mINFO[0m[2024-07-07T16:25:22+05:30]/Users/mehulkumar/dev/OpenPrep/OpenBackend/main.go:18 main.main() Logger initialized                           
+[36mINFO[0m[2024-07-07T16:25:22+05:30]/Users/mehulkumar/dev/OpenPrep/OpenBackend/main.go:46 main.main() Starting server on port 8080                 
+[36mINFO[0m[2024-07-07T16:25:51+05:30]/Users/mehulkumar/dev/OpenPrep/OpenBackend/config/logger.go:107 main.main.LogMiddleware.func1() HTTP request                                  [36mbodySize[0m=26 [36mclientIP[0m="::1" [36mlatency[0m="58.208µs" [36mmethod[0m=GET [36mpath[0m=/api/v1/health [36mstatus[0m=200 [36muserAgent[0m=PostmanRuntime/7.39.1
+[36mINFO[0m[0000]/Users/mehulkumar/dev/OpenPrep/OpenBackend/main.go:18 main.main() Logger initialized                           
+[36mINFO[0m[0000]/Users/mehulkumar/dev/OpenPrep/OpenBackend/main.go:46 main.main() Starting server on port 8080                 
+[36mINFO[0m[0017]/Users/mehulkumar/dev/OpenPrep/OpenBackend/config/logger.go:106 main.main.LogMiddleware.func1() HTTP request                                  [36mbodySize[0m=26 [36mclientIP[0m="::1" [36mlatency[0m="94.625µs" [36mmethod[0m=GET [36mpath[0m=/api/v1/health [36mstatus[0m=200 [36muserAgent[0m=PostmanRuntime/7.39.1
+{
+  "file": "main.go:18",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T16:35:55.850+05:30"
+}
+{
+  "file": "main.go:46",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T16:35:55.851+05:30"
+}
+{
+  "bodySize": 26,
+  "clientIP": "::1",
+  "file": "logger.go:141",
+  "func": "main.main.LogMiddleware.func1()",
+  "latency": 66542,
+  "level": "info",
+  "method": "GET",
+  "msg": "HTTP request",
+  "path": "/api/v1/health",
+  "status": 200,
+  "time": "2024-07-07T16:36:12.818+05:30",
+  "userAgent": "PostmanRuntime/7.39.1"
+}
+{
+  "file": "main.go:18",
+  "func": "main.main()",
+  "level": "warning",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T17:26:04.793+05:30"
+}
+{
+  "file": "main.go:44",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T17:26:04.793+05:30"
+}
+{
+  "file": "main.go:18",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T17:26:19.600+05:30"
+}
+{
+  "file": "main.go:44",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T17:26:19.600+05:30"
+}
+{
+  "bodySize": 26,
+  "clientIP": "::1",
+  "file": "logger.go:141",
+  "func": "main.main.LogMiddleware.func1()",
+  "latency": 30833,
+  "level": "info",
+  "method": "GET",
+  "msg": "HTTP request",
+  "path": "/api/v1/health",
+  "status": 200,
+  "time": "2024-07-07T17:27:03.160+05:30",
+  "userAgent": "PostmanRuntime/7.39.1"
+}
+{
+  "file": "main.go:19",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T17:28:12.943+05:30"
+}
+{
+  "file": "main.go:45",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T17:28:12.943+05:30"
+}
+{
+  "file": "main.go:48",
+  "func": "main.main()",
+  "level": "fatal",
+  "msg": "Error starting server: listen tcp :8080: bind: address already in use",
+  "time": "2024-07-07T17:28:12.944+05:30"
+}
+{
+  "file": "main.go:19",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T17:29:19.764+05:30"
+}
+{
+  "file": "main.go:45",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T17:29:19.764+05:30"
+}
+{
+  "file": "main.go:48",
+  "func": "main.main()",
+  "level": "fatal",
+  "msg": "Error starting server: listen tcp :8080: bind: address already in use",
+  "time": "2024-07-07T17:29:19.765+05:30"
+}
+{
+  "file": "main.go:19",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T17:29:47.190+05:30"
+}
+{
+  "file": "main.go:45",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T17:29:47.190+05:30"
+}
+{
+  "file": "main.go:48",
+  "func": "main.main()",
+  "level": "fatal",
+  "msg": "Error starting server: listen tcp :8080: bind: address already in use",
+  "time": "2024-07-07T17:29:47.190+05:30"
+}
+{
+  "file": "main.go:20",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Logger initialized",
+  "time": "2024-07-07T18:28:50.468+05:30"
+}
+{
+  "file": "db.go:56",
+  "func": "github.com/Mehul-Kumar-27/OpenBackend/database.InitializeDBHandler()",
+  "level": "info",
+  "msg": "Connected to database",
+  "time": "2024-07-07T18:28:50.476+05:30"
+}
+{
+  "file": "main.go:46",
+  "func": "main.main()",
+  "level": "info",
+  "msg": "Starting server on port 8080",
+  "time": "2024-07-07T18:28:50.476+05:30"
+}
+{
+  "bodySize": 26,
+  "clientIP": "::1",
+  "file": "logger.go:135",
+  "func": "main.main.LogMiddleware.func1()",
+  "latency": 88750,
+  "level": "info",
+  "method": "GET",
+  "msg": "HTTP request",
+  "path": "/api/v1/health",
+  "status": 200,
+  "time": "2024-07-07T18:29:50.975+05:30",
+  "userAgent": "PostmanRuntime/7.39.1"
+}

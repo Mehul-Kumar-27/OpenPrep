@@ -19,16 +19,17 @@ type Routes interface {
 
 type AbstractRouter struct{
 	engine *gin.Engine
-	authController auth.AuthService
+	manualAuthService auth.AuthService
 }
 
 
 func NewAbstractRouter(engine *gin.Engine) *AbstractRouter{
-	authService := auth.NewAuthController()
+	authController := auth.NewAuthController()
 	return &AbstractRouter{
 		engine: engine,
-		authController: authService,
+		manualAuthService: authController,
 	}
+
 }
 
 
@@ -44,7 +45,7 @@ func (router *AbstractRouter) SetupRoutes() *gin.Engine{
 func (ar *AbstractRouter) AuthGroup(rg *gin.RouterGroup) *gin.RouterGroup {
     authGroup := rg.Group("/auth")
     {
-        authGroup.POST("/login", ar.authController.Login)
+        authGroup.POST("/manual-login", ar.manualAuthService.Login)
         // Add other auth routes
     }
     return authGroup

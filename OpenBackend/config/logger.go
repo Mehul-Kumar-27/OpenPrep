@@ -10,42 +10,65 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
+	"github.com/mattn/go-colorable"
 )
 
 var Log *logrus.Logger
 
 type Fields logrus.Fields
 
-// InitLogger initializes the logger with the specified configuration
-func InitLogger(logLevel string, logFile string, enableConsole bool) {
-	Log = logrus.New()
+// CustomFormatter is a custom log formatter for Logrus that includes colored output
+type CustomFormatter struct {
+	logrus.TextFormatter
+}
 
-	// Set log level
-	level, err := logrus.ParseLevel(logLevel)
-	if err != nil {
-		level = logrus.InfoLevel
-	}
-	Log.SetLevel(level)
-
-	// Set formatter
-	Log.SetFormatter(&logrus.JSONFormatter{
+func (f *CustomFormatter) Format(entry *logrus.Entry) ([]byte, error) {
+	// Use JSON formatter for the actual log entry
+	formatter := &logrus.JSONFormatter{
 		TimestampFormat: "2006-01-02T15:04:05.000Z07:00",
 		CallerPrettyfier: func(f *runtime.Frame) (string, string) {
 			filename := filepath.Base(f.File)
 			return fmt.Sprintf("%s()", f.Function), fmt.Sprintf("%s:%d", filename, f.Line)
 		},
 		PrettyPrint: true,
+	}
+	jsonBytes, err := formatter.Format(entry)
+	if err != nil {
+		return nil, err
+	}
+
+	// Apply color for console output
+	if entry.Logger.Out == os.Stdout || entry.Logger.Out == os.Stderr {
+		return f.TextFormatter.Format(entry)
+	}
+
+	return jsonBytes, nil
+}
+
+// InitLogger initializes the logger with the specified configuration
+func InitLogger(logLevel string, logFile string, enableConsole bool) {
+	Log = logrus.New()
+
+	// Set formatter
+	Log.SetFormatter(&CustomFormatter{
+		TextFormatter: logrus.TextFormatter{
+			TimestampFormat: "2006-01-02T15:04:05.000Z07:00",
+			FullTimestamp:   true,
+			ForceColors:     true,
+			DisableColors:  false,
+		},
 	})
 
+	Log.Info("Logger initialized... ")
 	// Enable caller information
 	Log.SetReportCaller(true)
 
 	// Set output
 	var output io.Writer
 	if enableConsole && logFile != "" {
-		output = io.MultiWriter(os.Stdout, openLogFile(logFile))
+		output = io.MultiWriter(colorable.NewColorableStdout(), openLogFile(logFile))
 	} else if enableConsole {
-		output = os.Stdout
+		output = colorable.NewColorableStdout()
 	} else if logFile != "" {
 		output = openLogFile(logFile)
 	} else {

@@ -1,26 +1,20 @@
 package auth
 
-type AuthResponse struct {
-	Message string
-	Status  int
-	Flag    bool
-}
 
 type AuthService interface {
-	LoginInterface
-	
+	ManualAuthService
 }
 
 type AuthController struct {
 	AuthService
-	login LoginInterface
+	manualAuthService ManualAuthService
 }
 
 
 func NewAuthController() *AuthController {
-	login := NewLoginController()
+	manualAuthController := NewManualAuthController()
 
 	return &AuthController{
-		login: login,
+		manualAuthService: manualAuthController,
 	}
 }

@@ -13,6 +13,11 @@ type Config struct {
 	LogLevel     string
 	LogFile      string
 	LogToConsole bool
+	Postgreshost string
+	PostgresPort string
+	PostgresUser string
+	PostgresPassword string
+	PostgresDB string
 }
 
 var AppConfig Config
@@ -27,5 +32,10 @@ func Init() {
 		LogLevel:     os.Getenv("LOG_LEVEL"),
 		LogFile:      os.Getenv("LOG_FILE"),
 		LogToConsole: os.Getenv("LOG_TO_CONSOLE") == "true",
+		PostgresUser: os.Getenv("POSTGRES_USER"),
+		PostgresPassword: os.Getenv("POSTGRES_PASSWORD"),
+		PostgresDB: os.Getenv("POSTGRES_DB"),
+		Postgreshost: os.Getenv("POSTGRES_HOST"),
+		PostgresPort: os.Getenv("POSTGRES_PORT"),
 	}
 }
